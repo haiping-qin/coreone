@@ -1,0 +1,14 @@
+*.o
+.*.swp
+.*.d
+.*.cmd
+*.lds
+
+cscope*
+tags
+
+.config
+one
+one.*
+
+include/generated
