@@ -29,7 +29,7 @@ cat $BUILD_CONFIG | \
 
 cmp -s $tmpfile $SRC_CONFIG
 if [ $? -ne 0 ]; then
-	echo "  GEN    $SRC_CONFIG"
+	echo "  GEN     $SRC_CONFIG"
 	cp $tmpfile $SRC_CONFIG
 fi
 
