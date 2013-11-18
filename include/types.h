@@ -30,6 +30,8 @@ typedef long long		off_t;
 
 typedef unsigned long	time_t;
 
-#define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
+struct list_node {
+	struct list_node *next, *prev;
+};
 
 #endif

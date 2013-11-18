@@ -1,5 +1,4 @@
 #include <common.h>
-#include <string.h>
 
 void __noreturn kmain(void)
 {

@@ -208,6 +208,18 @@ done:
 	return count;
 }
 
+int sprintf(char *buf, const char *fmt, ...)
+{
+	va_list ap;
+	int r;
+
+	va_start(ap, fmt);
+	r = vsnprintf(buf, INT_MAX, fmt, ap);
+	va_end(ap);
+
+	return r;
+}
+
 int vprintf(const char *fmt, va_list ap)
 {
 	char buf[PR_BUFSIZ];
