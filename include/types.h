@@ -28,7 +28,9 @@ typedef unsigned long		size_t;
 typedef long			ssize_t;
 typedef long long		off_t;
 
-typedef unsigned long	time_t;
+typedef unsigned long		time_t;
+
+typedef unsigned long		addr_t;
 
 struct list_node {
 	struct list_node *next, *prev;

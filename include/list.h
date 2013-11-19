@@ -24,6 +24,9 @@ static inline void INIT_LIST_NODE(struct list_node *list)
 	list->prev = list;
 }
 
+#define list_next(node) ((node)->next)
+#define list_prev(node) ((node)->prev)
+
 /*
  * Insert a new entry between two known consecutive entries.
  *
@@ -163,6 +166,17 @@ static inline int list_is_last(const struct list_node *list,
 				const struct list_node *node)
 {
 	return list->next == node;
+}
+
+/**
+ * list_is_first - tests whether @list is the first entry in list @node
+ * @list: the entry to test
+ * @node: the node of the list
+ */
+static inline int list_is_first(const struct list_node *list,
+				const struct list_node *node)
+{
+	return list->prev == node;
 }
 
 /**
@@ -317,6 +331,11 @@ static inline void list_splice_tail_init(struct list_node *list,
 #define list_entry(ptr, type, member) \
 	container_of(ptr, type, member)
 
+#define list_prev_entry(ptr, type, member) \
+	container_of((ptr)->prev, type, member)
+
+#define list_next_entry(ptr, type, member) \
+	container_of((ptr)->next, type, member)
 /**
  * list_first_entry - get the first element from a list
  * @ptr:	the list node to take the element from.
