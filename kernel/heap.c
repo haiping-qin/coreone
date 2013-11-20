@@ -1,4 +1,5 @@
 #include <common.h>
+#include <sys/heap.h>
 #include <list.h>
 
 #if defined(CONFIG_HEAP_BASE)

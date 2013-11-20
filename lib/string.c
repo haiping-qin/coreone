@@ -10,12 +10,23 @@ size_t strlen(const char *s)
 	return n;
 }
 
-void *memcpy(void *dest, const void *src, size_t count)
+void *memcpy(void *d, const void *s, size_t n)
 {
-	char *d = dest;
-	const char *s = src;
+	const char *_s = s;
+	char *_d = d;
 
-	while (count--)
-		*d++ = *s++;
-	return dest;
+	while (n--)
+		*_d++ = *_s++;
+
+	return d;
+}
+
+void *memset(void *s, int c, size_t n)
+{
+	char *_s = s;
+	
+	while (n--)
+		*_s++ = c;
+
+	return s;
 }

@@ -4,5 +4,6 @@
 #define __noreturn __attribute__((noreturn))
 #define __nonnull __attribute__((nonnull))
 #define __printf(a, b) __attribute__((format(printf, a, b)))
+#define __malloc __attribute__((malloc))
 
 #endif
